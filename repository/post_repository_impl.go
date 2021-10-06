@@ -5,7 +5,6 @@ import (
 	"crud_mysql/entity"
 	"database/sql"
 	"errors"
-	"fmt"
 	"strconv"
 )
 
@@ -47,7 +46,6 @@ func (repository *postRepositoryImpl) FindById(ctx context.Context, id int32) (e
 	defer result.Close()
 
 	if result.Next() {
-		fmt.Println(post.UserName)
 		post.UserName = user.Name
 		result.Scan(&post.Id, &post.Title, &post.Body, &post.CreatedAt, &post.UserName)
 

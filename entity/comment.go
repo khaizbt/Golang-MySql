@@ -9,5 +9,7 @@ type (
 		PostId    int32
 		Comment   string
 		CreatedAt time.Time
+		UserName  string
+		PostTitle string
 	}
 )
